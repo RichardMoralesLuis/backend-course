@@ -1,18 +1,15 @@
 {
-  "name": "template-node-ts",
+  "name": "backend-course",
   "version": "1.0.0",
   "description": "📓 Template repo with node + ts",
   "keywords": [],
-  "homepage": "https://github.com/raulanatol/template-node-ts#readme",
-  "bugs": {
-    "url": "https://github.com/raulanatol/template-node-ts/issues"
-  },
+  "homepage": "https://github.com/RichardMoralesLuis/backend-course#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raulanatol/template-node-ts.git"
+    "url": "git+https://github.com/RichardMoralesLuis/backend-course"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Richard Morales Luis",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -26,6 +23,9 @@
     "preset": "ts-jest"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-session": "^1.4.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {

@@ -1,17 +1,23 @@
-import express from "express";
-import { getHelloMessage } from "./utils";
+import express from 'express';
+import * as bodyParser from 'body-parser';
+import path from 'path';
 
 const app = express();
 
-export const sayHello = (req, res) => {
-  res.status(200).json({
-    message: getHelloMessage(),
-    uptime: process.uptime()
-  });
-};
+app.use(bodyParser.json());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use('/public', express.static(`${__dirname}/html/static`));
 
-app.use("/", sayHello);
+
+app.get('/html', ((req, res) => {
+  res.sendFile(path.join(__dirname, 'html/index.html'));
+}));
+
+app.get('/ejs', ((req, res) => {
+  res.render('index');
+}));
 
 app.listen(3000, () => {
-  console.log("🚀 Running at localhost:3000");
+  console.log('🚀 Running at localhost:3000');
 });
